@@ -79,3 +79,20 @@ export const getGithubRankingRecords = async (date: Date) => {
     stream.end();
   });
 };
+
+/**
+ *
+ * @param records records of the csv file
+ * @param language specify programming language
+ * @param limit count of limit within [1,100]
+ */
+export const filterGithubRankingRecords = (
+  records: CSVRow[],
+  language: string,
+  limit: number
+) => {
+  const lowerCaseLanguage = language.toLowerCase();
+  return records
+    .filter((record) => record.language.toLowerCase() === lowerCaseLanguage)
+    .slice(0, limit);
+};
