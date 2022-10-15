@@ -20,7 +20,11 @@ If you don't prefer to use Docker, please follow back-end/README.md structures.
    ```
 5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
    ```bash
-    curl --location --request POST 'http://localhost:3000/github/topRated' --header 'Content-Type: application/x-www-form-urlencoded' --data-urlencode 'Language=PHP' --hpta-urlencode 'Date=2020-01-01' --data-urlencode 'Limit=1'
+    curl --location --request POST 'http://localhost:3000/github/topRated' \
+   --header 'Content-Type: application/x-www-form-urlencoded' \
+   --data-urlencode 'Language=JavaScript' \
+   --data-urlencode 'Date=2020-01-01' \
+   --data-urlencode 'Limit=10'
     ```
 
 6. Run Integration tests
