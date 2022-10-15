@@ -27,7 +27,8 @@ export const topRatedController = async (
    * convert to real type
    */
 
-  let { Date: date, Language, Limit }: topRatedRequest = req.body;
+  let { Date: date, Limit }: topRatedRequest = req.body;
+  const { Language }: topRatedRequest = req.body;
   date = new Date(date); // must be converted to date object validated by validator
   Limit = Number(Limit); // must be integer between [1,100] validated by validator
 
