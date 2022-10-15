@@ -34,8 +34,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
  * 500 error handlers
  */
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  // console.log("Path: ", req.path);
-  // console.error("Error: ", err);
+  console.log("Path: ", req.path);
+  console.error("Error: ", err);
 
   return res.status(500).json({ error: "500 Internal Server Error" });
 });
